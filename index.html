@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Fouad — Senior Full Stack .NET Developer</title>
+<meta name="description" content="Ahmed Fouad — Senior Full Stack .NET Developer &amp; Technical Lead. 15+ years building enterprise applications across banking, government and telecom.">
+<meta property="og:title" content="Ahmed Fouad — Senior Full Stack .NET Developer">
+<meta property="og:description" content="15+ years delivering enterprise applications across banking, government and telecom in Egypt, Saudi Arabia and the UAE.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232454B8'/%3E%3Ctext x='50' y='64' font-family='sans-serif' font-weight='700' font-size='40' fill='%23FFFFFF' text-anchor='middle'%3EAF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F6F7F9;
+    --border:#E3E6EB;
+    --text:#1D2433;
+    --text-dim:#5B6472;
+    --accent:#2454B8;
+    --accent-soft:#EAF0FC;
+    --sidebar-w:280px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover,a:focus-visible{text-decoration:underline;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+  h1,h2,h3{margin:0;font-weight:700;}
+  p{margin:0 0 1em;max-width:64ch;}
+  ul,ol{margin:0;padding:0;list-style:none;}
+
+  .skip-link{
+    position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;
+    padding:.6em 1em;font-weight:600;z-index:200;
+  }
+  .skip-link:focus{left:1em;top:1em;}
+
+  .page{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;}
+
+  /* ---------- sidebar ---------- */
+  .sidebar{
+    background:var(--bg-soft);border-right:1px solid var(--border);
+    padding:40px 28px;display:flex;flex-direction:column;gap:28px;
+    position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;
+  }
+  .avatar{
+    width:120px;height:120px;border-radius:50%;object-fit:cover;
+    border:3px solid #fff;box-shadow:0 0 0 3px var(--accent-soft),0 6px 18px rgba(20,40,90,.12);
+    display:block;margin:0 auto;
+  }
+  .id-block{text-align:center;}
+  .id-block h1{font-size:21px;margin-bottom:4px;}
+  .id-block p{font-size:14px;color:var(--text-dim);margin:0 auto;max-width:none;}
+
+  .contact{display:flex;flex-direction:column;gap:10px;font-size:14px;padding-top:4px;border-top:1px solid var(--border);}
+  .contact a,.contact .static-line{display:flex;align-items:center;gap:10px;color:var(--text-dim);}
+  .contact a:hover,.contact a:focus-visible{color:var(--accent);}
+  .contact svg{width:16px;height:16px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;}
+
+  .filetree{display:flex;flex-direction:column;gap:2px;font-size:14px;padding-top:4px;border-top:1px solid var(--border);}
+  .filetree a{color:var(--text-dim);padding:7px 10px;border-radius:6px;font-weight:500;}
+  .filetree a:hover,.filetree a:focus-visible{color:var(--accent);background:var(--accent-soft);text-decoration:none;}
+
+  .print-btn{
+    margin-top:auto;font-weight:600;font-size:14px;
+    background:#fff;color:var(--accent);border:1px solid var(--accent);
+    border-radius:7px;padding:10px 14px;cursor:pointer;
+  }
+  .print-btn:hover,.print-btn:focus-visible{background:var(--accent);color:#fff;}
+
+  /* ---------- main content ---------- */
+  .content{padding:56px 64px 80px;max-width:820px;}
+  .section-heading{font-size:22px;margin-bottom:6px;}
+  .section-rule{width:40px;height:3px;background:var(--accent);border:none;margin:0 0 22px;}
+  section{padding-top:52px;scroll-margin-top:24px;}
+  section:first-of-type{padding-top:0;}
+  section + section{border-top:1px solid var(--border);}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .chip{font-size:13px;color:var(--accent);background:var(--accent-soft);padding:5px 11px;border-radius:5px;white-space:nowrap;}
+
+  .role{position:relative;padding:4px 0 32px 20px;border-left:3px solid var(--border);}
+  .role:last-child{padding-bottom:0;}
+  .role-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;margin-bottom:2px;}
+  .role-title{font-size:16.5px;font-weight:700;}
+  .role-dates{font-size:13px;color:var(--text-dim);white-space:nowrap;}
+  .role-org{font-size:14px;color:var(--text-dim);margin-bottom:12px;}
+  .role-body li{position:relative;padding-left:16px;margin-bottom:8px;font-size:15px;max-width:62ch;}
+  .role-body li::before{content:"–";position:absolute;left:0;color:var(--text-dim);}
+  .role-sub{margin-top:8px;margin-bottom:10px;}
+  .role-sub-label{font-size:12.5px;font-weight:700;color:var(--text-dim);margin-bottom:6px;}
+
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;margin-top:4px;}
+  .skill-group h3{font-size:14.5px;margin-bottom:9px;}
+
+  .cert-list li{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;}
+  .cert-list li:last-child{border-bottom:none;}
+
+  footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--border);color:var(--text-dim);font-size:13.5px;}
+
+  @media (max-width:880px){
+    .page{display:block;}
+    .sidebar{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border);}
+    .content{padding:40px 24px 56px;max-width:100%;}
+    .skills-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:480px){
+    .content{padding:32px 18px 48px;}
+    .section-heading{font-size:19px;}
+  }
+
+  @media print{
+    .print-btn{display:none!important;}
+    .page{display:block;}
+    .sidebar{position:static;border:none;padding:0 0 24px;}
+    .content{padding:0;max-width:100%;}
+  }
+</style>
+</head>
+<body>
+<a href="#profile" class="skip-link">Skip to content</a>
+<div class="page">
+
+  <aside class="sidebar" aria-label="Profile and navigation">
+    <img class="avatar" src="ahmed-photo.jpg" alt="Portrait of Ahmed Fouad">
+    <div class="id-block">
+      <h1>Ahmed Fouad</h1>
+      <p>Senior Full Stack .NET Developer &amp; Technical Lead</p>
+    </div>
+
+    <nav class="contact" aria-label="Contact">
+      <a href="mailto:eng.ahmedfoad@gmail.com"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="m4 6 8 7 8-7"/></svg>eng.ahmedfoad@gmail.com</a>
+      <a href="tel:+201119247190"><svg viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg>+20 111 924 7190</a>
+      <a href="https://www.linkedin.com/in/ahmed-fouad-dotnetdev/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4.5a2 2 0 0 1 4 0V17M12 12.5v4.5"/></svg>linkedin.com/in/ahmed-fouad-dotnetdev
+      </a>
+      <a href="https://github.com/ahmedfoad" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.5c0-1 .1-1.4-.5-2 2-.2 4.5-1 4.5-4.5a3.5 3.5 0 0 0-1-2.5 3.3 3.3 0 0 0-.1-2.5s-.8-.25-2.9 1a10 10 0 0 0-5 0C8.8 5.75 8 6 8 6a3.3 3.3 0 0 0-.1 2.5 3.5 3.5 0 0 0-1 2.5c0 3.5 2.5 4.3 4.5 4.5-.3.3-.5.7-.5 1.5V21"/></svg>github.com/ahmedfoad
+      </a>
+      <span class="static-line">Cairo, Egypt · English, Arabic</span>
+    </nav>
+
+    <nav class="filetree" aria-label="Sections">
+      <a href="#profile">Profile</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+    </nav>
+
+    <button class="print-btn" onclick="window.print()" type="button">Download as PDF</button>
+  </aside>
+
+  <main class="content" id="main">
+
+    <section id="profile">
+      <h2 class="section-heading">Profile summary</h2>
+      <hr class="section-rule">
+      <p>Accomplished engineering leader with 15+ years delivering enterprise applications, digital transformation initiatives, and large-scale government and banking solutions across Egypt, Saudi Arabia, and the UAE.</p>
+      <p>Expert in enterprise application architecture, with a focus on scalable, secure, and maintainable solutions using .NET, ASP.NET Core, Entity Framework Core, Angular, and SQL Server / Oracle. Proven record leading engineering teams of up to 8 developers and QA professionals, driving technical excellence through mentoring, code governance, agile delivery, and engineering best practice.</p>
+      <p>Pivotal in developing key modules of Saudi Arabia's national Nusuk Umrah platform, supporting complex business workflows, multi-entity integrations, and digital services used by millions of pilgrims and stakeholders. Extensive expertise in enterprise-grade APIs, workflow orchestration, asynchronous processing, messaging architectures, and multi-tenant platforms. Strong background in cloud-enabled DevOps — Azure DevOps CI/CD, automated deployments, production monitoring, and incident resolution — and in security architectures built on OAuth2, OIDC, JWT, and role-based access control.</p>
+      <div class="chip-row" aria-label="Core competencies">
+        <span class="chip">Enterprise Application Development</span>
+        <span class="chip">Workflow Automation &amp; BPM</span>
+        <span class="chip">Clean Architecture &amp; DDD</span>
+        <span class="chip">High-Performance Database Engineering</span>
+        <span class="chip">Solution Architecture &amp; System Design</span>
+        <span class="chip">CI/CD &amp; DevOps Automation</span>
+        <span class="chip">Distributed Systems</span>
+        <span class="chip">Secure Identity &amp; Access Management</span>
+        <span class="chip">Microservices &amp; API Integration</span>
+        <span class="chip">Digital Transformation</span>
+        <span class="chip">Banking, Government &amp; Telecom</span>
+        <span class="chip">Mentoring &amp; Coaching</span>
+        <span class="chip">Stakeholder Management</span>
+        <span class="chip">Requirements Analysis &amp; Agile Delivery</span>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-heading">Work experience</h2>
+      <hr class="section-rule">
+
+      <div class="role">
+        <div class="role-head"><span class="role-title">Senior Full Stack .NET Developer</span><span class="role-dates">Oct '24 — Present</span></div>
+        <p class="role-org">NTG Clarity · Cairo, Egypt</p>
+        <ul class="role-body">
+          <li>Developing the contracts, group-management, and reporting modules of the Nusuk Umrah portal using .NET Core, Clean Architecture, and DDD, supporting external Umrah operators across Saudi Arabia on a national platform serving millions of pilgrims annually.</li>
+          <li>Designing and implementing a multi-step contract-approval workflow in Camunda BPMN, automating manual handoffs between operators and approval authorities with an auditable, traceable process.</li>
+          <li>Integrating the portal with 18 external systems and third-party services through REST APIs secured with OAuth2 and JWT.</li>
+          <li>Extending CRS Marketplace APIs with enhanced search, details, and reservation capabilities consumed by partner applications.</li>
+          <li>Developing resilient background workers for asynchronous job processing, including retry mechanisms and failure handling.</li>
+          <li>Shipping application logs to Elasticsearch via Serilog to improve production monitoring and diagnostics.</li>
+          <li>Maintaining production-grade microservices applying Clean Architecture and CQRS/MediatR across contracts, group management, and reporting domains.</li>
+          <li>Implementing event-driven integrations between portal modules and external systems using Kafka and RabbitMQ.</li>
+          <li>Managing data persistence on PostgreSQL and Oracle, including schema design, indexing, and query optimization for reporting performance.</li>
+          <li>Implementing identity and access management with Keycloak and IdentityServer — OAuth 2.0, OIDC, and JWT for authentication and role-based access control.</li>
+          <li>Containerizing and deploying microservices with Docker on Linux, through Azure DevOps CI/CD pipelines.</li>
+          <li>Building responsive Angular components integrated with secure backend APIs.</li>
+        </ul>
+        <div class="role-sub">
+          <p class="role-sub-label">Highlights</p>
+          <ul class="role-body">
+            <li>Collaborated with business stakeholders to gather, clarify, and prioritise requirements, translating them into tailored technical solutions.</li>
+            <li>Provided production support across the platform — troubleshooting issues, identifying root causes, and implementing fixes.</li>
+          </ul>
+        </div>
+        <div class="chip-row">
+          <span class="chip">.NET Core</span><span class="chip">Angular</span><span class="chip">Clean Architecture</span>
+          <span class="chip">CQRS/MediatR</span><span class="chip">Camunda</span><span class="chip">Kafka</span>
+          <span class="chip">RabbitMQ</span><span class="chip">PostgreSQL</span><span class="chip">Oracle</span>
+          <span class="chip">Keycloak</span><span class="chip">Docker</span><span class="chip">Azure DevOps</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><span class="role-title">Technical Lead (.NET / Angular)</span><span class="role-dates">Feb '24 — Sep '24</span></div>
+        <p class="role-org">Depkey · Cairo, Egypt</p>
+        <ul class="role-body">
+          <li>Led an 8-member development and QA team — four senior developers, two junior developers, and two QC engineers — running sprint planning, code reviews, delivery, and performance follow-ups.</li>
+          <li>Delivered a travel platform covering flights, hotels, and packages from inception to production within 8 months using .NET Core and Angular.</li>
+          <li>Co-developed a multi-tenant management system using ABP Framework and DDD, securing API endpoints with OAuth2 and JWT.</li>
+          <li>Established Azure DevOps CI/CD pipelines from scratch, including build and release automation, code-review gates, and automated deployment to IIS.</li>
+          <li>Implemented a SignalR hub streaming real-time hotel search results to the mobile application.</li>
+          <li>Developed a background worker for weekly synchronization of hotel lookup data from external providers.</li>
+          <li>Established the team's testing standards with NUnit, xUnit, and Moq.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">.NET Core</span><span class="chip">Angular</span><span class="chip">ABP Framework</span>
+          <span class="chip">SQL Server</span><span class="chip">SignalR</span><span class="chip">Azure DevOps</span><span class="chip">IIS</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><span class="role-title">Senior Full Stack Developer (.NET / Angular)</span><span class="role-dates">Jan '23 — Jan '24</span></div>
+        <p class="role-org">Banque Misr · Cairo, Egypt</p>
+        <ul class="role-body">
+          <li>Core developer on Legal Pro, Banque Misr's legal case-management system, supporting the legal department's daily operations.</li>
+          <li>Implemented role-based access control and JWT validation across secured API endpoints.</li>
+          <li>Integrated asynchronous messaging to support event processing and communication between system modules.</li>
+          <li>Defined product backlogs and user stories in Azure DevOps while maintaining version-controlled code with GitFlow.</li>
+          <li>Supported UAT activities and production releases, helping ensure smooth delivery of application updates.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">.NET 6</span><span class="chip">Angular</span><span class="chip">SQL Server</span>
+          <span class="chip">TypeScript</span><span class="chip">Azure DevOps</span><span class="chip">IIS</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><span class="role-title">Senior Full Stack Developer</span><span class="role-dates">Jul '21 — Jan '23</span></div>
+        <p class="role-org">Sales ARM FZ LLC · Dubai (Remote)</p>
+        <ul class="role-body">
+          <li>Led development and deployment of Digiteam, a sales digitization and gamification platform used by enterprise clients across the UAE and Egypt, including Banque Misr's incentive module.</li>
+          <li>Developed REST and WCF services powering both web and mobile applications.</li>
+          <li>Enhanced lead management, CRM tracking, and team performance monitoring across the platform.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">.NET Framework 4.8</span><span class="chip">MVC 5</span><span class="chip">WCF</span>
+          <span class="chip">SQL Server</span><span class="chip">jQuery</span><span class="chip">IIS</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><span class="role-title">Software Engineer</span><span class="role-dates">Jan '21 — Jul '21</span></div>
+        <p class="role-org">Echo Tech · Cairo, Egypt</p>
+        <ul class="role-body">
+          <li>Developed the SIM Lifecycle Management System (SDMS) for the Telecommunications Regulatory Authority of Bahrain, covering SIM activation, replacement, and termination across telecom providers.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">ASP.NET Core</span><span class="chip">MVC</span><span class="chip">WCF</span>
+          <span class="chip">SQL Server</span><span class="chip">Angular</span><span class="chip">Telerik Reporting</span><span class="chip">IIS</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><span class="role-title">Senior .NET Developer</span><span class="role-dates">Oct '20 — Jan '21</span></div>
+        <p class="role-org">NileBits · Cairo, Egypt</p>
+        <ul class="role-body">
+          <li>Maintained and enhanced a manufacturing ERP system for a Canadian client, supporting production, inventory management, procurement, and operational workflow.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">Windows Forms</span><span class="chip">DevExpress</span><span class="chip">SQL Server</span><span class="chip">Reporting</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><span class="role-title">Senior .NET Developer &amp; Team Lead</span><span class="role-dates">May '14 — Jul '20</span></div>
+        <p class="role-org">Horan Al-Shamel · Saudi Arabia</p>
+        <ul class="role-body">
+          <li>Led a software development team for more than six years, delivering municipality systems for Saudi government clients.</li>
+          <li>Developed an HR management system integrated with fingerprint hardware through web APIs to automate attendance and payroll.</li>
+          <li>Designed and developed a large-scale document archiving system for efficient storage, indexing, and retrieval.</li>
+          <li>Developed a supermarket POS application supporting barcode scanning and receipt-printer integration.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">ASP.NET MVC</span><span class="chip">Windows Forms</span><span class="chip">SQL Server</span>
+          <span class="chip">Oracle</span><span class="chip">REST APIs</span><span class="chip">Crystal Reports</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><span class="role-title">Earlier .NET Developer roles</span><span class="role-dates">2011 — 2014</span></div>
+        <p class="role-org">Agile Business Solutions and others · Cairo, Egypt</p>
+        <ul class="role-body">
+          <li>Developed POS, HR, and payroll systems with fingerprint-based biometric integration, plus medical assessment applications, using ASP.NET MVC and SQL Server.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">ASP.NET MVC</span><span class="chip">SQL Server</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="skills">
+      <h2 class="section-heading">Technical skills</h2>
+      <hr class="section-rule">
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Back-end</h3>
+          <div class="chip-row">
+            <span class="chip">C#</span><span class="chip">.NET Core</span><span class="chip">ASP.NET Core</span>
+            <span class="chip">Minimal APIs</span><span class="chip">ASP.NET MVC</span><span class="chip">EF Core</span>
+            <span class="chip">CQRS</span><span class="chip">MediatR</span><span class="chip">SignalR</span>
+            <span class="chip">Background Services</span><span class="chip">Camunda (BPMN)</span><span class="chip">ABP Framework</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Front-end</h3>
+          <div class="chip-row">
+            <span class="chip">Angular</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span>
+            <span class="chip">jQuery</span><span class="chip">Bootstrap</span><span class="chip">RxJS</span>
+            <span class="chip">HTML5</span><span class="chip">CSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Architecture &amp; practices</h3>
+          <div class="chip-row">
+            <span class="chip">Clean Architecture</span><span class="chip">Domain-Driven Design</span><span class="chip">Multi-tenancy</span>
+            <span class="chip">REST API design</span><span class="chip">Database design</span><span class="chip">xUnit / NUnit / Moq</span>
+            <span class="chip">Agile / Scrum</span><span class="chip">Code review &amp; mentoring</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Data &amp; messaging</h3>
+          <div class="chip-row">
+            <span class="chip">SQL Server</span><span class="chip">Oracle</span><span class="chip">PostgreSQL</span>
+            <span class="chip">Schema design</span><span class="chip">Indexing &amp; query tuning</span>
+            <span class="chip">Kafka</span><span class="chip">RabbitMQ</span><span class="chip">Event-driven messaging</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Security</h3>
+          <div class="chip-row">
+            <span class="chip">OAuth2 / OIDC</span><span class="chip">JWT</span><span class="chip">RBAC</span>
+            <span class="chip">Keycloak (SSO)</span><span class="chip">IdentityServer</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>DevOps &amp; observability</h3>
+          <div class="chip-row">
+            <span class="chip">Azure DevOps CI/CD</span><span class="chip">Git (GitFlow)</span><span class="chip">IIS</span>
+            <span class="chip">Serilog</span><span class="chip">Production troubleshooting</span><span class="chip">Docker</span><span class="chip">Linux</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Working style</h3>
+          <div class="chip-row">
+            <span class="chip">Problem-solving</span><span class="chip">Leadership &amp; collaboration</span>
+            <span class="chip">Decision making</span><span class="chip">Time management</span><span class="chip">Communication</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2 class="section-heading">Certifications</h2>
+      <hr class="section-rule">
+      <ul class="cert-list">
+        <li>Secure Coding in C# and .NET — Udemy</li>
+        <li>Apache Kafka for Distributed Systems — Udemy</li>
+        <li>Building Background Services in .NET (HangFire) — Udemy</li>
+        <li>ALX Software Engineering Program — in partnership with the Mastercard Foundation</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2 class="section-heading">Education</h2>
+      <hr class="section-rule">
+      <div class="role">
+        <div class="role-head"><span class="role-title">B.Sc. in Information Systems</span><span class="role-dates">2010</span></div>
+        <p class="role-org">Faculty of Computers and Information, Helwan University · Cairo</p>
+      </div>
+    </section>
+
+    <footer>Ahmed Fouad · Cairo, Egypt · 2026</footer>
+  </main>
+
+</div>
+</body>
+</html>
